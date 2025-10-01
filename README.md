@@ -12,6 +12,12 @@ Not all NUMBER rows have a matching OVERLAY row.
 
 The query finds the first 1000 NUMBER rows and their matching NUMBER_OVERLAY rows (if they exist).
 
+## Files
+
+- **query_casekey_with_overlays.sql** - Production-ready query (replace `YourTableName` with your actual table)
+- **example_with_sample_data.sql** - Complete example with sample data that you can run to see how it works
+- **README.md** - This documentation file
+
 ## Usage
 
 1. Open `query_casekey_with_overlays.sql`
@@ -70,6 +76,22 @@ The file also includes a commented-out alternative using UNION ALL, which may pe
 - SQL Server version and configuration
 
 To use the alternative solution, uncomment it and comment out the first query.
+
+## Testing
+
+To test the query with sample data:
+
+1. Open and run `example_with_sample_data.sql` in SQL Server Management Studio or Azure Data Studio
+2. This will:
+   - Create a temporary table with sample CaseKey data
+   - Show all the sample data
+   - Run the query and display results
+   - Clean up the temporary table
+
+The example demonstrates how the query handles:
+- Base cases with matching overlays (e.g., 12345 and 12345_OVERLAY)
+- Base cases without overlays (e.g., 67890)
+- Proper ordering (base case followed by its overlay)
 
 ## Sample Data Example
 
